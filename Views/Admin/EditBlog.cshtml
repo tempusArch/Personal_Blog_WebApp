@@ -1,0 +1,32 @@
+@model PersonalBlog.Views.Admin.EditBlogModel
+
+<h1>Edit Blog - @Model.BlogPost.Id</h1>
+
+<form method="post">
+    <div class="form-group mt-2">
+        <label asp-for="BlogPost.Title"></label>
+        <input asp-for="BlogPost.Title" class="form-control">
+        <input asp-for="BlogPost.Id" class="form-control" hidden>
+        <input asp-for="BlogPost.LastUpdatedDate" class="form-control" hidden>
+        <input asp-for="BlogPost.PublishedDate" class="form-control" hidden>
+        <span asp-validation-for="BlogPost.Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-2">
+        <label asp-for="BlogPost.Content"></label>
+        <textarea asp-for="BlogPost.Content" class="form-control" rows="15"></textarea>
+        <span asp-validation-for="BlogPost.Content" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mt-2">
+        <label asp-for="BlogPost.Author"></label>
+        <input asp-for="BlogPost.Author" class="form-control">
+        <span asp-validation-for="BlogPost.Author" class="text-danger"></span>
+    </div>
+
+    <button asp-action="Edit" type="submit" class="btn btn-danger mt-4" style="float:right">Submit</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

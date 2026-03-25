@@ -1,0 +1,23 @@
+﻿@using PersonalBlog.Models;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Date of Publish</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in (List<Blog>)ViewData["Blogs"]!)
+        {
+            <tr>
+                <td><a href="@Url.Action("ViewBlog", "Home", new { id = item.Id})">@item.Title</a></td>
+                <td>@item.PublishedDate</td>
+            </tr>
+        }            
+    </tbody>
+</table>

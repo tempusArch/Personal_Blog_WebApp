@@ -1,0 +1,23 @@
+@model List<PersonalBlog.Models.Blog>
+
+<div class="blog-admin-container">
+    <div class="header">
+        <h1>Personal Blog</h1>
+        <a href="@Url.Action("Create", "Admin")" class="add-link">+ Add</a>
+    </div>
+
+    <div class="blog-list">
+        <ul>
+            @foreach (var b in Model)
+            {
+                <li>
+                    <span class="blog-title">@b.Title</span>
+                    <span class="blog-actions">
+                        <a href="@Url.Action("Edit", "Admin", new { id = b.Id })">Edit</a>
+                        <a href="@Url.Action("Delete", "Admin", new { id = b.Id })">Delete</a>
+                    </span>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

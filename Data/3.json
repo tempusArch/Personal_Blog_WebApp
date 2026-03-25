@@ -1,0 +1,1 @@
+{"Id":3,"Title":"About Controller Parameter Names","Content":"Controller parameter names would be used in http request path. Therefore, they could not be random ones.\r\n\r\nThey should be like \u0022id\u0022 and something like that.","Author":"Tempus Arch","PublishedDate":"2025-12-02T00:00:00","LastUpdatedDate":"2026-03-25T07:16:03.9564682Z"}

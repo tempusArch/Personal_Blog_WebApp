@@ -1,0 +1,26 @@
+@using PersonalBlog.Models;
+
+<table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Date of Publish</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in (List<Blog>)ViewData["Blog"]!)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td><a href="@Url.Action("ViewOneBlog", "Admin", new { id = item.Id})">@item.Title</a></td>
+                <td>@item.PublishedDate</td>
+                <td><a href="@Url.Action("EditBlog", "Admin", new { id = item.Id})">Edit</a></td>
+                <td><a href="@Url.Action("DeleteBlog", "Admin", new { id = item.Id})">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br><br>
+<a href="@Url.Action("CreateBlog", "Admin")">Create Blog</a> 
